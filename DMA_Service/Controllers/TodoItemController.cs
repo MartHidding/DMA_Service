@@ -15,7 +15,8 @@ namespace DMA_Service.Controllers
         {
             base.Initialize(controllerContext);
             MobileServiceContext context = new MobileServiceContext();
-            DomainManager = new EntityDomainManager<TodoItem>(context, Request);
+            DomainManager = new EntityDomainManager<TodoItem>(context, Request, enableSoftDelete: true); // Step 1 Enable OfflineSync enalbesoftdelete
+          
         }
 
         // GET tables/TodoItem
